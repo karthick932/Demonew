@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="A1EED23B00688FA0F4F3B93362306565">
+		<section name="ShowDatapoolCandidatesDialog">
+			<item value="true" key="show_candidates"/>
+		</section>
+	</section>
+	<section name="customcode">
+		<item value="customcode" key="defpkg"/>
+	</section>
+</section>
