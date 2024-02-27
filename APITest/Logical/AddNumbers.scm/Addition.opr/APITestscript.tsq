@@ -2,7 +2,7 @@
 <editableResource createdTimestamp="1708691476359"
     createdUser="karthick_ba" id="2f67b12b:18dd5b58e00:-7e2b"
     references="2f67b12b:18dd5b58e00:-7eb2,2f67b12b:18dd5b58e00:-7e94"
-    type="test_resource" updatedTimestamp="1708691476359"
+    type="test_resource" updatedTimestamp="1708947298279"
     updatedUser="karthick_ba" version="1.1">
     <loggingConfiguration debug="false" resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
     <resourceConfig description="" name="">
@@ -13,7 +13,8 @@
                 type="send_request_action" version="1.1">
                 <loggingConfiguration debug="false"
                     resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
-                <resourceConfig description="" formatter="HTTP_Message"
+                <resourceConfig description="" enabled="false"
+                    formatter="HTTP_Message"
                     name="&quot;Text&quot; on resource &quot;/addNumbers&quot; using schema &quot;Text&quot; via &quot;AddNumbersPort&quot;" transport="2f67b12b:18dd5b58e00:-7eb2">
                     <headerMessage assocdefid="Http Publish"
                         meTy="Message" name="" sch="Http Publish"
@@ -26,7 +27,7 @@
                             </fieldAction>
                         </fieldActionGroup>
                         <_c meTy="String" name="Method"
-                            sch="Http Publish" type="7" version="1.2">
+                            sch="Http Publish" type="7" value="POST" version="1.2">
                             <fieldActionGroup>
                                 <fieldAction type="0">
                                     <fieldAction exp="POST" type="0"/>
@@ -34,7 +35,7 @@
                             </fieldActionGroup>
                         </_c>
                         <_c meTy="String" name="URL" sch="Http Publish"
-                            type="7" version="1.2">
+                            type="7" value="/addNumbers" version="1.2">
                             <fieldActionGroup>
                                 <fieldAction type="0">
                                     <fieldAction exp="/addNumbers" type="0"/>
@@ -52,7 +53,7 @@
                                 </fieldAction>
                             </fieldActionGroup>
                             <_c meTy="String" name="Version"
-                                sch="Http Publish" type="7" version="1.2">
+                                sch="Http Publish" type="7" value="1.1" version="1.2">
                                 <fieldActionGroup>
                                     <fieldAction type="0">
                                     <fieldAction exp="1.1" type="0"/>
@@ -70,7 +71,8 @@
                                     </fieldAction>
                                 </fieldActionGroup>
                                 <_c meTy="String" name="SOAPAction"
-                                    sch="Http Publish" type="7" version="1.2">
+                                    sch="Http Publish" type="7"
+                                    value="&quot;Add&quot;" version="1.2">
                                     <fieldActionGroup>
                                     <fieldAction type="0">
                                     <fieldAction
@@ -79,7 +81,8 @@
                                     </fieldActionGroup>
                                 </_c>
                                 <_c meTy="String" name="Content-Type"
-                                    sch="Http Publish" type="7" version="1.2">
+                                    sch="Http Publish" type="7"
+                                    value="text/xml; charset=utf-8" version="1.2">
                                     <fieldActionGroup>
                                     <fieldAction type="0">
                                     <fieldAction
@@ -88,7 +91,8 @@
                                     </fieldActionGroup>
                                 </_c>
                                 <_c meTy="String" name="Pragma"
-                                    sch="Http Publish" type="7" version="1.2">
+                                    sch="Http Publish" type="7"
+                                    value="no-cache" version="1.2">
                                     <fieldActionGroup>
                                     <fieldAction type="0">
                                     <fieldAction exp="no-cache" type="0"/>
@@ -96,9 +100,18 @@
                                     </fieldActionGroup>
                                 </_c>
                             </_c>
+                            <_c meTy="Boolean" name="followRedirects"
+                                sch="Http Publish" type="8" value="true" version="1.2">
+                                <fieldActionGroup>
+                                    <fieldAction type="0">
+                                    <fieldAction exp="true" type="0"/>
+                                    </fieldAction>
+                                </fieldActionGroup>
+                            </_c>
                         </_c>
                         <_c meTy="String" name="MessageType"
-                            sch="Http Publish" type="7" version="1.2">
+                            sch="Http Publish" type="7"
+                            value="http.text.message.type" version="1.2">
                             <fieldActionGroup>
                                 <fieldAction type="0">
                                     <fieldAction
@@ -333,7 +346,8 @@
                 type="receive_reply_action" version="1.1">
                 <loggingConfiguration debug="false"
                     resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
-                <resourceConfig description="" formatter="HTTP_Message"
+                <resourceConfig description="" enabled="false"
+                    formatter="HTTP_Message"
                     name="&quot;Text&quot; using schema &quot;Text&quot;"
                     sendRequestID="2f67b12b:18dd5b58e00:-7e27" transport="2f67b12b:18dd5b58e00:-7eb2">
                     <headerMessage assocdefid="Http Receive Reply"
@@ -411,7 +425,7 @@
                                     ignoreNonPresent="false" type="100"/>
                                     </fieldAction>
                                 </fieldActionGroup>
-                                <_c meTy="String" name="Content-Type"
+                                <_c meTy="String" name="content-type"
                                     sch="Http Receive Reply" type="7" version="1.2">
                                     <fieldActionGroup>
                                     <fieldAction enabled="false" type="1">
@@ -447,15 +461,7 @@
                             sch="Http Receive Reply" type="11" version="1.2"/>
                     </headerMessage>
                     <subconfig MessageType="http.text.message.type"
-                        Method="POST" URL="" _version="1.1"
-                        consumerType="Participate" filterHeaders="true"
-                        filterMethod="true" filterResourcePath="false"
-                        formatter="HTTP_Message" transport="2f67b12b:18dd5b58e00:-7eb2">
-                        <filterHeadersList>
-                            <header disabled="true" name="Content-Type"
-                                type="7" value="text/xml;charset=utf-8"/>
-                        </filterHeadersList>
-                    </subconfig>
+                        _version="1.1" formatter="HTTP_Message" transport="2f67b12b:18dd5b58e00:-7eb2"/>
                     <bodyMessage assocdefid="Text" name="Text"
                         sch="Text" type="12" version="1.2">
                         <fieldActionGroup>
@@ -631,5 +637,6 @@
             </editableResource>
         </testTree>
         <tagDataStore inputMode="NONE" outputMode="NONE"/>
+        <testprops messageClearance="false"/>
     </resourceConfig>
 </editableResource>
