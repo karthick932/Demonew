@@ -2,7 +2,7 @@
 <editableResource createdTimestamp="1708691476359"
     createdUser="karthick_ba" id="2f67b12b:18dd5b58e00:-7e2b"
     references="2f67b12b:18dd5b58e00:-7eb2,2f67b12b:18dd5b58e00:-7e94"
-    type="test_resource" updatedTimestamp="1708947298279"
+    type="test_resource" updatedTimestamp="1709006173626"
     updatedUser="karthick_ba" version="1.1">
     <loggingConfiguration debug="false" resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
     <resourceConfig description="" name="">
@@ -340,6 +340,17 @@
                     </bodyMessage>
                 </resourceConfig>
             </editableResource>
+            <editableResource id="a52d7fa:18de8b3bca7:-7e86"
+                selfDescribing="The log actions enables you to output messages to console and a logging file."
+                type="logging_action" version="1.0">
+                <loggingConfiguration debug="false"
+                    resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
+                <resourceConfig append="true" description=""
+                    flush="true"
+                    loggingMessage="Running the API test in middle way"
+                    name="Running the API test in middle way"
+                    outputFile="" role="0"/>
+            </editableResource>
             <editableResource id="2f67b12b:18dd5b58e00:-7e21"
                 references="2f67b12b:18dd5b58e00:-7eb2,2f67b12b:18dd5b58e00:-7e94"
                 selfDescribing="Receive and validate a response to the request you have sent."
@@ -461,7 +472,10 @@
                             sch="Http Receive Reply" type="11" version="1.2"/>
                     </headerMessage>
                     <subconfig MessageType="http.text.message.type"
-                        _version="1.1" formatter="HTTP_Message" transport="2f67b12b:18dd5b58e00:-7eb2"/>
+                        URL="" _version="1.1" allowSubPath="false"
+                        consumerType="Participate" filterHeaders="false"
+                        filterMethod="false" filterResourcePath="false"
+                        formatter="HTTP_Message" transport="2f67b12b:18dd5b58e00:-7eb2"/>
                     <bodyMessage assocdefid="Text" name="Text"
                         sch="Text" type="12" version="1.2">
                         <fieldActionGroup>
@@ -636,6 +650,17 @@
                 </resourceConfig>
             </editableResource>
         </testTree>
+        <tearDownTree>
+            <editableResource id="-771ea3f9:18de8aa0a4c:-7e88"
+                selfDescribing="The log actions enables you to output messages to console and a logging file."
+                type="logging_action" version="1.0">
+                <loggingConfiguration debug="false"
+                    resultWriterLoggingLevel="FULL" writeStubEventsToDB="false"/>
+                <resourceConfig append="true" description=""
+                    flush="true" loggingMessage="Completed API test"
+                    name="Completed API test" outputFile="" role="0"/>
+            </editableResource>
+        </tearDownTree>
         <tagDataStore inputMode="NONE" outputMode="NONE"/>
         <testprops messageClearance="false"/>
     </resourceConfig>
